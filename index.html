@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="movies recommendation collaborative filtering">
+    <title>Movies Recommendation</title>
+    <!-- Include css files. -->
+    <link rel="preload stylesheet" as="style" href="./assets/style.css">
+    <link rel="preload stylesheet" as="style" href="./assets/fa.min.css">
+</head>
+
+<body>
+    <div class="container w-full mx-auto md:px-4 pb-8">
+        <!-- Header. -->
+        <center>
+            <h1 class="font-bold display-1 underline">
+                Collaborative Filtering
+            </h1>
+            <h4 class="text-subtitle mb-6">Collaborative filtering (CF) is a technique used by recommender systems.It is
+                the process of filtering for information or patterns using techniques involving collaboration among
+                multiple agents, viewpoints, data sources, etc.</h4>
+        </center>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
+            <!-- Showing movies list. -->
+            <div class="col-span-1">
+                <div class="bg-light mb-2 p-2 text-center">
+                    <h4 class="text-gray mb-0">Rate atleast 3 movies to get recommendations.</h4>
+                </div>
+                <div id="moviesList_id"></div>
+            </div>
+            <div class="col-span-1">
+                <div id="rec_movies_id"></div>
+                <div class="card p-2 px-4">
+                    <div class="bg-light mb-2 p-2 text-center">
+                        <h4 class="text-gray mb-0">Choose rating site or score to calculate similarity.</h4>
+                    </div>
+                    <!-- Choose rating site. -->
+                    <h4>Rating Site</h4>
+                    <select
+                        class="w-full border-2 border-gray p-2 mb-3 capitalize focus:outline-none focus:border-primary"
+                        id="ratingsite_id"
+                        oninput="javascript: showMovies(ratingSite , this.value); ratingSite = this.value; if(Object.keys(user.Reviews).length > 2){ recMovies(); }">
+                        <option selected value="Imdb_rating">Imdb</option>
+                        <option value="Metascore">Meta Critic</option>
+                        <option value="Rotten_Tomatoes">Rotten Tomatoes</option>
+                    </select>
+                    <!-- Choose similarity score function. -->
+                    <h4>Similarity Score</h4>
+                    <select
+                        class="w-full border-2 border-gray p-2 mb-3 capitalize focus:outline-none focus:border-primary"
+                        id="simscore_id" oninput="javascript: simScore = parseInt(this.value); recMovies();">
+                        <option selected value="0">Pearson Score</option>
+                        <option value="1">Euclidean Distance</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Include script.js file -->
+    <script type="text/javascript" src="./assets/preMovies.js"></script>
+    <script type="text/javascript" src="./assets/preImdbReviews.js"></script>
+    <script type="text/javascript" src="./assets/preMetaCriticReviews.js"></script>
+    <script type="text/javascript" src="./assets/preRottenTomatoesReviews.js"></script>
+    <script type="text/javascript" src="./assets/script.js"></script>
+</body>
+
+</html>
