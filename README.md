@@ -1,5 +1,6 @@
 # Movies-Recommendation-System (Collaborative Filtering)
-Movies recommendation and rating prediction using collaborative filtering.
+Movies recommendation and rating prediction using collaborative filtering.<br>
+Demo [lovesaroha/Movies-Recommendation-System](https://js.lovesaroha.com/Movies-Recommendation-System)
 
 ## Features
 - Choose saved ratings from (Imdb, MetaScore , Rotten Tomatoes).
@@ -11,5 +12,3 @@ Movies recommendation and rating prediction using collaborative filtering.
 
 ---
 ![image](https://raw.githubusercontent.com/lovesaroha/gimages/main/37.png)
-
-[lovesaroha/Movies-Recommendation-System](https://js.lovesaroha.com/Movies-Recommendation-System)
